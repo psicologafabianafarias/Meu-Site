@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicóloga Fabiana Farias | CRP 06/234608</title>
+    
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+
+    <style>
+        :root {
+            --bg-color: #FDF9F8;
+            --header-rose: #F6E4E1;
+            --card-bg: #F9EFED;
+            --primary-color: #6D4347;
+            --rose-burnt: #B57379;
+            --rose-hover: #9C5B61;
+            --text-color: #4F3A3C;
+            --text-light: #82696B;
+            --whatsapp-green: #25D366;
+            --whatsapp-hover: #1EBE5D;
+            --white: #FFFFFF;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .serif {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary-color);
+        }
+
+        header {
+            background-color: var(--header-rose);
+            border-bottom: 1px solid rgba(181, 115, 121, 0.25);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 14px 5%;
+            box-shadow: 0 2px 15px rgba(109, 67, 71, 0.06);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-area img {
+            height: 52px;
+            width: 52px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--rose-burnt);
+            background-color: var(--white);
+        }
+
+        .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.55rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--rose-burnt);
+        }
+
+        .btn-nav {
+            background-color: var(--rose-burnt);
+            color: var(--white) !important;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(181, 115, 121, 0.3);
+        }
+
+        .btn-nav:hover {
+            background-color: var(--rose-hover);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 65px 5% 75px;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .subtitle-tag {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: var(--rose-burnt);
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 3.6rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .crp-badge {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            font-style: italic;
+            border-left: 3px solid var(--rose-burnt);
+            padding-left: 14px;
+            margin-bottom: 24px;
+        }
+
+        .quote-box {
+            font-style: italic;
+            color: var(--text-color);
+            font-size: 1.05rem;
+            margin-bottom: 28px;
+            padding-left: 16px;
+            border-left: 2px solid rgba(181, 115, 121, 0.4);
+        }
+
+        .pills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+
+        .pill {
+            background-color: var(--card-bg);
+            color: var(--primary-color);
+            border: 1px solid rgba(181, 115, 121, 0.3);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--whatsapp-green);
+            color: var(--white);
+            text-decoration: none;
+            padding: 15px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.28);
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-rose {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--rose-burnt);
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 26px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.92rem;
+            transition: var(--transition);
+            margin-top: 18px;
+            width: 100%;
+        }
+
+        .btn-rose:hover {
+            background-color: var(--rose-hover);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--rose-burnt);
+            border-radius: 24px;
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 420px;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(109, 67, 71, 0.15);
+            position: relative;
+            z-index: 1;
+            background-color: var(--card-bg);
+        }
+
+        section {
+            padding: 75px 5%;
+        }
+
+        .section-alt {
+            background-color: var(--card-bg);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.6rem;
+            margin-bottom: 12px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 40px;
+            align-items: center;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(181, 115, 121, 0.25);
+            box-shadow: 0 10px 30px rgba(109, 67, 71, 0.05);
+        }
+
+        .about-photo {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 3px solid var(--header-rose);
+        }
+
+        .about-text p {
+            margin-bottom: 16px;
+            font-size: 0.96rem;
+        }
+
+        .edu-box {
+            background-color: var(--card-bg);
+            padding: 18px 22px;
+            border-radius: 14px;
+            margin-top: 14px;
+            border-left: 3px solid var(--rose-burnt);
+        }
+
+        .edu-box h4 {
+            font-size: 1.25rem;
+            margin-bottom: 4px;
+        }
+
+        .edu-box p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 26px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background-color: var(--white);
+            padding: 32px 26px;
+            border-radius: 20px;
+            border: 1px solid rgba(181, 115, 121, 0.2);
+            box-shadow: 0 8px 25px rgba(109, 67, 71, 0.04);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--rose-burnt);
+        }
+
+        .step-number {
+            width: 42px;
+            height: 42px;
+            background-color: var(--rose-burnt);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+Use o código com cuidado.
+align-items: center;
+justify-content: center;
+font-weight: 600;
+font-size: 1.1rem;
+margin-bottom: 18px;
+}
+.card h3 {
+font-size: 1.55rem;
+margin-bottom: 10px;
+}
+.card h4 {
+font-size: 1.35rem;
+margin-bottom: 8px;
+}
+.card p {
+font-size: 0.92rem;
+color: var(--text-light);
+}
+.topics-box {
+margin-top: 32px;
+background-color: var(--card-bg);
+padding: 30px;
+border-radius: 20px;
+text-align: center;
+border: 1px solid rgba(181, 115, 121, 0.25);
+}
+.topics-box h3 {
+font-size: 1.7rem;
+margin-bottom: 18px;
+}
+.topics-tags {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 10px;
+}
+.topic-tag {
+background-color: var(--white);
+color: var(--primary-color);
+border: 1px solid rgba(181, 115, 121, 0.35);
+padding: 8px 18px;
+border-radius: 50px;
+font-size: 0.88rem;
+font-weight: 500;
+}
+.online-banner {
+margin-top: 30px;
+background-color: var(--white);
+padding: 28px;
+border-radius: 20px;
+text-align: center;
+border: 1px solid rgba(181, 115, 121, 0.25);
+}
+.price-tag {
+font-family: 'Cormorant Garamond', serif;
+font-size: 2.6rem;
+font-weight: 700;
+color: var(--rose-burnt);
+margin: 12px 0;
+}
+.pix-badge {
+display: inline-block;
+margin-top: 14px;
+background-color: var(--header-rose);
+color: var(--primary-color);
+padding: 10px 16px;
+border-radius: 12px;
+font-size: 0.88rem;
+font-weight: 600;
+border: 1px dashed var(--rose-burnt);
+}
+.community-box {
+margin-top: 40px;
+background-color: var(--card-bg);
+padding: 38px;
+border-radius: 24px;
+border: 1px solid rgba(181, 115, 121, 0.28);
+display: grid;
+grid-template-columns: 1fr 1.4fr;
+gap: 30px;
+align-items: center;
+}
+.highlight-banner {
+margin-top: 45px;
+background: linear-gradient(135deg, var(--header-rose) 0%, #F2D6D1 100%);
+border: 1px solid rgba(181, 115, 121, 0.35);
+border-radius: 24px;
+padding: 45px;
+text-align: center;
+}
+.highlight-banner h2 {
+font-size: 2.4rem;
+margin-bottom: 14px;
+}
+.highlight-banner p {
+max-width: 650px;
+margin: 0 auto 28px;
+color: var(--text-color);
+}
+footer {
+background-color: var(--primary-color);
+color: var(--header-rose);
+padding: 50px 5% 30px;
+text-align: center;
+}
+footer h3 {
+color: var(--white);
+font-size: 1.8rem;
+margin-bottom: 8px;
+}
+footer p {
+font-size: 0.9rem;
+opacity: 0.88;
+margin-bottom: 16px;
+}
+.copyright {
+border-top: 1px solid rgba(255, 255, 255, 0.15);
+padding-top: 20px;
+margin-top: 20px;
+font-size: 0.82rem;
+opacity: 0.75;
+}
+@media (max-width: 860px) {
+.hero, .about-grid, .community-box {
+grid-template-columns: 1fr;
+text-align: center;
+}
+.crp-badge, .quote-box, .edu-box {
+border-left: none;
+padding-left: 0;
+}
+.pills-container {
+justify-content: center;
+}
+nav ul {
+display: none;
+}
+.hero h1 {
+font-size: 2.8rem;
+}
+}
+
+
+Fabiana Farias
+Sobre Mim
+Atendimento
+Como Funciona
+Investimento
+Nossos Combinados
+
+
+ Agendar
+
+
+
+
+
+Apresentação Profissional
+Fabiana Farias
+Psicóloga | CRP 06/234608
+"O sofrimento deixa de ser insuportável no momento em que encontra um sentido e alguém disposto a escutá-lo sem julgamentos."
+Online (30 min)
+Adultos e Adolescentes
+Abordagem Existencial-Humanista
+ Falar pelo WhatsApp
+
+Capítulo Um
+Sobre Mim
+Sou psicóloga clínica e acredito que a terapia é um espaço de escuta, cuidado e construção. Meu trabalho é ajudar você a compreender o que sente e a encontrar caminhos possíveis para o dia a dia, com ética, sigilo e respeito à sua história.
+
+
+Meu olhar é fundamentado na Abordagem Centrada na Pessoa (ACP), na Fenomenologia Existencial e na Logoterapia de Viktor Frankl, valorizando a liberdade de escolha, o autoconhecimento e a busca genuína por sentido.
+Graduação
+Psicologia - Universidade Anhanguera (2025)
+Especializações
+Pós-Graduação Lato Sensu em Abordagem Centrada na Pessoa (ACP) e em Políticas Públicas com Ênfase em Saúde da Família. Capacitação em Prevenção ao Suicídio (UFSC).
+
+
+
+Capítulo Dois
+Como Posso Te Ajudar
+Adultos
+Atendimento individual para quem quer cuidar da saúde emocional, ressignificar vivências e desenvolver autonomia.
+Adolescentes
+A partir de 12 anos, com escuta atenta e participação da família quando necessário para apoiar essa fase de transição.
+
+Temas que Trabalho
+
+Ansiedade
+Autoestima
+Relacionamentos
+Estresse
+Propósito de Vida
+Autoconhecimento
+Mudanças de Vida
+Emoções
+
+
+Capítulo Três
+Como Funciona
+1
+Primeiro Contato
+Você me chama no WhatsApp e combinamos o dia e o horário da melhor forma para você.
+2
+Primeira Sessão
+Um encontro inicial acolhedor para nos conhecermos, entender sua demanda e alinhar expectativas.
+3
+Sessões de 30 Minutos
+Frequência combinada de acordo com a sua necessidade clínica e ritmo emocional.
+
+Atendimento 100% Online
+Realizado por videochamada (Google Meet, WhatsApp ou Zoom), garantindo um espaço seguro, sigiloso e humanizado para o seu cuidado emocional, onde quer que você esteja.
+
+Capítulo Quatro
+Investimento
+Sessão Individual
+30 minutos • Online
+R$ 60,00
+Ideal para acompanhamento pontual ou flexível.
+Agendar Sessão
+Pacote Mensal
+4 Sessões • Pagamento Mensal
+R$ 200,00
+Consistência terapêutica com melhor custo-benefício para o seu processo.
+Garantir Pacote
+Formas de Pagamento (PIX)
+Chave PIX (mesmo número do WhatsApp):
+Celular: (11) 94850-3459
+Transferência Bancária
+
+
+Capítulo Cinco
+Nossos Combinados
+Sigilo
+Tudo o que é conversado é estritamente confidencial, conforme prevê o Código de Ética Profissional do Psicólogo.
+Cancelamentos
+Avise com 24 horas de antecedência para remarcarmos o horário sem nenhum custo adicional.
+Pontualidade
+A sessão começa e termina pontualmente no horário combinado para preservar o setting terapêutico.
+Faltas
+Faltas sem aviso prévio de antecedência são cobradas normalmente, preservando o horário exclusivo reservado.
+
+Parceria Comunitária
+Psicologia Comunitária e Clínica Ampliada
+Visitar Revivaz.com.br
+
+
+Compromisso Social e Coletivo
+Além do consultório clínico particular, minha trajetória inclui forte atuação em saúde pública, redes de atenção psicossocial (RAPS) e projetos comunitários.
+A parceria com a Revivaz reforça a crença de que o bem-estar psicológico caminha lado a lado com a cidadania, o acolhimento territorial e a promoção de redes de apoio acessíveis e humanas.
+
+Vamos Começar?
+Você não precisa caminhar sozinho para acolher sua história, expandir suas escolhas e redescobrir sentidos. Estou aqui para te acompanhar.
+
+ Iniciar Atendimento via WhatsApp
+
+
+Fabiana Farias
+Fabiana Farias — Psicóloga Clínica | CRP 06/234608
+Atendimento Online em São Paulo, SP • Contato: (11) 94850-3459
+
+© 2026 Fabiana Farias. Todos os direitos reservados.
+
+
+
+<FollowUp>
